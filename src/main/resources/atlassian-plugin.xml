@@ -1,0 +1,36 @@
+<!--
+ Copyright (c) 2013 Vlastimil Elias. All rights reserved.
+-->
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+  <plugin-info>
+    <description>${project.description}</description>
+    <version>${project.version}</version>
+    <vendor name="Vlastimil Elias" url="${project.scm.url}" />
+    <application-version min="3.0" />
+  </plugin-info>
+  
+  <resource type="i18n" name="plugin" location="plugin_messages"/>
+  
+  <resource type="download" name="images/" location="images/"/>
+      
+  <web-item key="c2k.send2kindle" name="Send To Kindle" section="system.content.action/primary" weight="50">
+    <description>This module provides the page tools menu entry for the Send to Kindle.</description>
+    <label key="c2k.navlink" />
+    <styleClass>kindleWidget</styleClass>
+    <link linkId="c2k.dimport" >/pages/viewpage.action?pageId=$helper.page.id</link>
+    <icon height="15" width="15">
+      <link>/download/resources/${project.groupId}.${project.artifactId}/images/icon16.png</link>
+    </icon> 
+    <condition class="com.atlassian.confluence.plugin.descriptor.web.conditions.PagePermissionCondition">
+      <param name="permission">view</param>
+    </condition>
+  </web-item>
+  
+  <web-resource name="c2k js resources" key="c2k-resources">
+    <resource name="init.js" type="download" location="js/init.js"/>
+    <resource name="widget.js" type="download" location="js/widget.js"/>
+    <context>page</context>
+    <context>blogpost</context>
+  </web-resource>
+  
+</atlassian-plugin>
