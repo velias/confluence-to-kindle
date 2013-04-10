@@ -24,8 +24,8 @@
     
     <scm>
       <url>https://github.com/velias/confluence-to-kindle</url>
-      <connection>git://github.com/velias/confluence-to-kindle.git</connection>
-      <developerConnection>https://github.com/velias/confluence-to-kindle.git</developerConnection>
+      <connection>scm:git:git://github.com/velias/confluence-to-kindle.git</connection>
+      <developerConnection>scm:git:https://github.com/velias/confluence-to-kindle.git</developerConnection>
     </scm>
 
   <properties>
